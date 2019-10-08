@@ -8,10 +8,20 @@
     <title>Formulario</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            body{
+                width: 50%;
+                height: 50%;
+                margin: 0 auto;
+                background-color: #cccccc;
+            }
+        </style>
 </head>
 
 <body>
-    <form class="form-control">
+
+    <div class="container">
+    <form>
         <div class="form-group">
             <label for="nome">Nome: </label>
             <input type="text" class="form-control" id="nome" placeholder="Nome completo">
@@ -37,7 +47,7 @@
             </select>
         </div>
         <div class="form-group form-check">
-            <label class="form-check-label" for="preferencias">Preferências: </label>
+            <p><label class="form-check-label" for="preferencias">Preferências: </label></p>
             <p><input type="checkbox" class="form-check-input" id="preferencias"> Análise e Projeto de Software</p>
             <p><input type="checkbox" class="form-check-input" id="preferencias"> Programação web 2</p>
             <p><input type="checkbox" class="form-check-input" id="preferencias"> Gestão e Qualidade de Software</p>
