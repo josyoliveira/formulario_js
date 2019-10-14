@@ -7,9 +7,10 @@ function validarForm(){
     var nome = document.getElementById('nome').value;
     var senha = document.getElementById('senha').value;
     var confirSenha = document.getElementById('confirSenha').value;
+    var check = document.getElementById('preferencias');
     
     if(document.getElementById('nome').value == "" || nome.length < 3){
-        alert("Insira seu nome com pelo menos três letras");
+        alert("Insira seu nome com pelo menos três caracteres");
         document.getElementById('nome').focus();
 
         return false;
@@ -35,8 +36,14 @@ function validarForm(){
     }
 
     if(senha != confirSenha){
-        alert("Sua senha está diferente do campo anterior.");
+        alert("Sua senha está.");
         document.getElementById('confirSenha').focus();
+        return false;
+    }
+
+    if(check.checked == false){
+        alert("Informe uma preferência.");
+        
         return false;
     }
 
