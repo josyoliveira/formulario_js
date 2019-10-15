@@ -1,0 +1,90 @@
+<script>
+    //É o hello world do javaScript.
+    //alert("podemos fazer mais com JavaScript!")
+
+    // Outro forma de Escrever uma msg na tela.
+    // document.write("Minha idade é: ")
+    // document.write(21)
+
+    //Atribuindo valor a uma varialvel e concatenando.
+    // var ano = 2012
+    // document.write("<h1>Eu nasci em : " + (ano - 25) + "</h1><br>")
+
+    
+    //Declarando uma função em javaScript
+    function mostra(frase){
+        document.write(frase + "<br>")
+    }
+    //Chamando uma função
+    // var ano = 2012
+    // mostra("Eu nasci em : " + (ano - 25))
+
+    // document.write("Olá mundo <br>")
+    // document.write("Esse é meu segundo programa")
+    // // imprimir textos no console
+    // console.log("esta msg aparece apenas no log")
+
+    // var peso = 54
+    // var altura = 1.65
+    // var IMC = peso / (altura * altura)
+
+    // mostra("Meu IMC é: " + Math.round(IMC))
+
+    // var nome = prompt("Bom dia! Qual seu nome? ")
+    // document.write("Bem vindo(a), " + nome + "<br>")
+
+    // var idade = prompt(nome + ", quantos anos você tem?")
+    // document.write(nome + " tem " + idade + " anos ") 
+
+    //Estrutura de condição
+    // var vitorias = prompt("Quantos jogos CSA Venceu ?")
+    // var empates = prompt("Quantos jogos o CSA Empatou ?")
+    // var pontos = (parseInt(vitorias) * 3) + parseInt(empates)
+
+    // if(pontos > 42){
+    //     mostra("O CSA não será rebaxaido!")
+    // }else{
+    //     mostra("Lamento imformar. Mas acho que o CSA será rebaixado!")
+    // }
+
+   //Sorteia numero de 0 a 6 
+    //var chute = prompt("Já pensei. Qual você acha que é?")
+    // for (var i = 0; i < 6; i++) {
+    //     var numeroPensado = Math.round(Math.random() * 10)
+    //     mostra("Eu tinha pensado no " + numeroPensado)
+    // }
+    //if(chute == numeroPensado)
+    // {
+    //     mostra("Uau. Você acertou, pois eu pensei no "+ numeroPensado)
+    // }
+    // else {
+    //     mostra("Você errou! Eu tinha pensado no " +numeroPensado)
+    // }
+
+    //Mostra os anos que tem copa
+    // var anoCopa = 1930
+    // while(anoCopa <= 2022)
+    // {
+    //     console.log(anoCopa + " tem copa!")
+    //     anoCopa = anoCopa + 4
+    // }
+    //Tabuada
+    // var numero = 7
+    // for(var multiplicador = 1; multiplicador <= 10; multiplicador++)
+    // {
+    //      mostra(multiplicador * numero)
+    // }
+
+    for(var linha = 0; linha < 5; linha = linha + 1)
+    {
+     for(var coluna = 0; coluna < 10; coluna = coluna + 1)
+     {
+       document.write ("***  ***")
+       document.write ("***  **")
+       document.write ("*** ***")
+     }
+     document.write("<br>")
+        }
+   
+
+</script>
