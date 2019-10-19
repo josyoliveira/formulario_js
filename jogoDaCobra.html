@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="principal"></div>
+    <script>
+        var tabuleiro = "<table aling=center border=1>"
+        for(var x = 0; x < 10; x++){
+            tabuleiro += "<tr>"
+            for (var y = 0; y < 10; y++) {
+                tabuleiro += "<td id=td" + x + "_" + y + " style='width:30px; height: 30px'> </td>"
+                document.getElementById('td3_3').style.background="#333333"
+                tabuleiro += "</tr>"
+            }
+        }
+        document.getElementById('principal').innerHTML = tabuleiro + "</table>"
+        var cobra=[[5,0]]
+        var direcao = 2
+        var mx = parseInt(Math.random()*10)
+        var my = parseInt(Math.random()*10)
+        var vivo = true
+
+        function anda(){
+            document.getElementById('td' + cobra[cobra.length-1][0] + '_' + cobra[cobra.length-1][1]).style.background="#ffffff"
+            if(mx == cobra[cobra.length-1][0] && my == cobra[cobra.length-1][0]){
+                mx = parseInt(Math.random() * 10)
+                my = parseInt(Math.random() * 10)
+                cobra[cobra.length] = [10,10]
+            }
+            if(direcao == 0)cobra[0][1]--;
+            if(direcao == 1)cobra[0][0]--;
+            if(direcao == 2)cobra[0][1]++;
+            if(direcao == 3)cobra[0][0]++;
+
+            document.getElementById('td' + cobra[0][0] + '_' + cobra[0][1]).style.background="#333333"
+            document.getElementById('td' + mx + "_" + my).style.background="#ff3333"
+            setTimeout('anda()',300)
+        }
+
+        anda()
+    </script>
+</body>
+</html>
