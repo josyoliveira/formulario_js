@@ -8,7 +8,7 @@
         for(var x = 0; x < 10; x++){
             tabuleiro += "<tr>";
             for (var y = 0; y < 10; y++) {
-                tabuleiro += "<td id=td" + x + "_" + y + " style='width:30px; height: 30px; background-color=#c6c6c6;'> </td>";
+                tabuleiro += "<td id=td" + x + "_" + y + " style='width:30px; height: 30px; background-color=#ffffff;'> </td>";
             }    
             tabuleiro += "</tr>";
         }
@@ -18,6 +18,8 @@
         var mx = parseInt(Math.random()*10);
         var my = parseInt(Math.random()*10);
         var vivo = true;
+        var pontuacao = 0;
+        var velocidade = 500;
 
         function anda(){
             document.getElementById('td' + cobra[cobra.length-1][0] + '_' + cobra[cobra.length-1][1]).style.background="#ffffff";
@@ -25,6 +27,8 @@
                 mx = parseInt(Math.random() * 10);
                 my = parseInt(Math.random() * 10);
                 cobra[cobra.length] = [10,10];
+                pontuacao++;
+                velocidade -= 30;
             }
 
             for (x = cobra.length-1; x > 0; x--) {
@@ -41,13 +45,20 @@
             for(x=1;x<cobra.length;x++)if(cobra[0][0]==cobra[x][0] && cobra[0][1]==cobra[x][1])vivo = false;
             if(cobra[0][0] < 0 || cobra[0][1] < 0 || cobra[0][0] > 9 || cobra[0][1] > 9)vivo = false;
 
+            if(vivo){
+                setTimeout('anda()',velocidade);
+            }
+            else{
+                alert('Fim do jogo');
+                alert('Pontuacao: ' + pontuacao);
+                
+            } 
             document.getElementById('td' + cobra[0][0] + '_' + cobra[0][1]).style.background="#77dd77";  
             document.getElementById('td' + mx + "_" + my).style.background="#ff3333";
-            if(vivo)setTimeout('anda()',300);
-            else alert('Fim do jogo');
 
         }
         anda();
+
         function pegadirecao(tecla){
             if (tecla == 37)direcao=0;
             if (tecla == 38)direcao=1;
